@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+.table {
+  display: grid;
+  grid-template-columns: repeat(18, 60px);
+  grid-template-rows: repeat(9, 60px);
+  gap: 0 0;
+  grid-template-areas:
+    "H . . . . . . . . . . . . . . . . He"
+    "Li Be . . . . . . . . . . B C N O F Ne"
+    "Na Mg . . . . . . . . . . Al Si P S Cl Ar"
+    "K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr"
+    "Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe"
+    "Cs Ba . Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn"
+    "Fr Ra . Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og"
+    ". . . La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu"
+    ". . . Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr"
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  margin-left: 6px;
+}
+body {
+  overflow-x: hidden;
+}
+.empty {
+  position: absolute;
+  border: solid 1px black;
+  margin: 1px;
+  left: 138px;
+  top: 328px;
+  width: 60px;
+  height: 240px;
+}
+.empty-cell {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.group {
+  width: 60px;
+  text-align: center;
+  margin: 4px 0;
+}
+.column {
+  height: 60px;
+  display: flex;
+  align-items: end;
+  margin-right: 4px;
+}
+.description {
+  margin: 3px;
+  width: 245px;
+  border: solid 1px black;
+}
+.description-text {
+  margin: 1px 3px;
+  font-size: 14px;
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.description-text:hover {
+  background-color: #eace5d;
+}
+.cell:hover {
+  background-color: #eace5d;
+  cursor: pointer;
+}
+.desc-square {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.25;
+  border: solid 4px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  margin: 0 auto;
+  height: 140px;
+  padding: 5px;
+}
+.category {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  left: 120px;
+  width: 600px;
+  height: 180px;
+}
+.level {
+  line-height: 1.1;
+  width: 16px;
+  text-align: end;
+}
+.category-table {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(9, 40px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 0 0;
+  grid-template-areas:
+    "mh mh mh mh mh mh h-m nmh nmh"
+    "al al-e la ak trm p-trm h-m nm g"
+    "al al-e la ak trm p-trm h-m nm g"
+}
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(0.25turn, blue, yellow, red);
+  width: 400px;
+  height: 16px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: -2px;
+  width: 5px;
+  height: 20px;
+  background-color: black;
+}
+.temp-input {
+  border-bottom: solid 1px grey;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  outline: none;
+  width: 50px;
+  overflow: hidden;
+  font-size: 20px;
+}
+.temp-container {
+  font-size: 20px;
+  margin: 4px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.temp-square {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: solid 1px;
+  width: 24px;
+  height: 24px;
+}
+.category-text {
+  cursor: pointer;
+  writing-mode: vertical-rl;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  padding: 3px;
+}
+.square {
+  border: solid 2px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  margin: 4px;
+}
+.mh {
+  grid-area: mh;
+  font-size: 15px;
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+  display: flex;
+  justify-content: center;
+}
+.h-m {
+  grid-area: h-m;
+}
+.nmh {
+  grid-area: nmh;
+  font-size: 15px;
+  border-top: solid 1px black;
+  border-right: solid 1px black;
+  border-left: solid 1px black;
+}
+.al {
+  grid-area: al;
+}
+.al-e {
+  grid-area: al-e;
+}
+.la {
+  grid-area: la;
+}
+.ak {
+  grid-area: ak;
+}
+.trm {
+  grid-area: trm;
+}
+.p-trm {
+  grid-area: p-trm;
+}
+.h-m {
+  grid-area: h-m;
+}
+.nm {
+  grid-area: nm;
+}
+.g {
+  grid-area: g;
+}
+.cell {
+  border: solid 1px black;
+  margin: 1px;
+}
+.cell div {
+  height: 25%;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.alkaline {
+  background-color: #eace5d;
+}
+.alkaline-earth {
+  background-color: #f1f165;
+}
+.lanthanides {
+  background-color: #e8d19c;
+}
+.actinides {
+  background-color: #f5ccda;
+}
+.transition {
+  background-color: #fac5b7;
+}
+.post-transition {
+  background-color: #acdfec;
+}
+.nonmetals {
+  background-color: #8ced8c;
+}
+.noble-gases {
+  background-color: #e5bde5;
+}
+.half-metals {
+  background-color: #9ee5d4;
+}
